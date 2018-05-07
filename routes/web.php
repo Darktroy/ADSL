@@ -19,6 +19,7 @@
 
 //Route::get('/', function () {
     Route::get('/','frontController@index');
+    Route::get('/All-Providers','frontController@allProviders');
     Route::get('/show-offer/{id}','frontController@show');
 //});
 

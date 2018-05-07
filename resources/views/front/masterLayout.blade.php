@@ -16,8 +16,8 @@
 
 			<!-- Navigation Bar -->
 			<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-			  <a class="navbar-brand" href="{{url('front/index.html')}}">
-			    <img src="Images/letter-b.PNG" width="30" height="30" class="d-inline-block align-top" alt="">
+			  <a class="navbar-brand" href="{{url('/')}}">
+			    <img src="{{url('/front/Images/letter-b.PNG')}}" width="30" height="30" class="d-inline-block align-top" alt="">
 			    Broadband
 			  </a>
 			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +26,10 @@
 			  <div class="collapse navbar-collapse" id="navbarNav">
 			    <ul class="navbar-nav ">
 			      <li class="nav-item active">
-			        <a class="nav-link" href="{{url('front/index.html')}}">Home <span class="sr-only">(current)</span></a>
+			        <a class="nav-link" href="{{url('')}}">Home <span class="sr-only">(current)</span></a>
 			      </li>
 			      <li class="nav-item">
-			        <a class="nav-link" href="{{url('front/All Providers.html')}}">Providers</a>
+			        <a class="nav-link" href="{{url('All-Providers')}}">Providers</a>
 			      </li>
 			      <li class="nav-item">
 			        <a class="nav-link" href="{{url('front/Search.html')}}">Broadband Plans</a>
@@ -37,9 +37,9 @@
 			      <li class="nav-item">
 			        <a class="nav-link" href="{{url('front/#')}}">DashBoard</a>
 			      </li>
-			      <li class="nav-item">
+			      <!--li class="nav-item">
 			        <a class="nav-link" href="{{url('front/Search.html')}}"><i class="fas fa-search"></i></a>
-			      </li>
+			      </li-->
 			    </ul>
 			  </div>
 			</nav>
