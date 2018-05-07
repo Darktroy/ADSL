@@ -96,7 +96,6 @@
 	            </div>         
                             
 			</div>
-
-			</div>			
+			
 <!--// End a section-->
 @stop
