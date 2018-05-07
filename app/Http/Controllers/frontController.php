@@ -16,34 +16,20 @@ class frontController extends Controller
     {
         $offers = offers::getAlll();
         
-        $articles = \App\article::get();
-         /*dd($articles);
-       
-         * Collection {#255 ▼
-  #items: array:3 [▼
-    0 => article {#264 ▼
-      #table: "article"
-      +timestamps: false
-      #fillable: array:3 [▶]
-      #connection: "mysql"
-      #primaryKey: "id"
-      #keyType: "int"
-      +incrementing: true
-      #with: []
-      #withCount: []
-      #perPage: 15
-      +exists: true
-      +wasRecentlyCreated: false
-      #attributes: array:4 [▼
-        "article_id" => 1
-        "position_id" => 2
-        "article" => "body 1&nbsp;"
-        "title" => "title 1"
-      ]
-         */
+        $articles_row = \App\article::get();
+        $articles = [];
+        foreach ($articles_row as $key_art => $value_article) {
+            if($value_article['position_id']==1){
+               $articles[1]= array('title'=>$value_article['title'],'article'=>$value_article['article']);
+            }elseif ($value_article['position_id']==2) {
+               $articles[2]= array('title'=>$value_article['title'],'article'=>$value_article['article']);
+            }elseif ($value_article['position_id']==3) {
+               $articles[3]= array('title'=>$value_article['title'],'article'=>$value_article['article']);
+            }
+            
+        }
         $provider = \App\providers::listOfProviders();
         $features = \App\offerfeature::listOfeatures('all');
-        
         return view('front.indexFront')
                 ->with('offers',$offers)
                 ->with('articles',$articles)
@@ -51,6 +37,14 @@ class frontController extends Controller
 //                ->with('features',$features)
                 ;
         
+    }
+    public function allProviders() {
+        
+        $offers = offers::getAlll();
+        $provider = \App\providers::listOfProviders($offers);
+//        dd($provider);
+        return view('front.AllProviders')
+                ->with('provider',$provider) ;
     }
 
     /**
